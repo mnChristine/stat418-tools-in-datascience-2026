@@ -178,7 +178,7 @@ Claude Code (Cline) is an AI coding assistant that runs in VSCode. We'll use it 
 3. In the settings that appear:
    - **API Provider**: Select "OpenRouter"
    - **API Key**: Paste your OpenRouter API key
-   - **Model**: Select "anthropic/claude-3.5-sonnet" (recommended) or a free model like "google/gemini-2.0-flash-exp:free"
+   - **Model**: Select one of the recommended free models below, or "anthropic/claude-3.5-sonnet" (paid, but highest quality)
 
 ### Step 3: Test Claude Code
 
@@ -189,18 +189,31 @@ Claude Code (Cline) is an AI coding assistant that runs in VSCode. We'll use it 
 
 If you get a response with Python code, you're all set! ✓
 
-### Alternative Free Models on OpenRouter
+### Top 3 Free Models for Coding
 
-If you want to use completely free models:
-- `google/gemini-2.0-flash-exp:free` - Fast and capable
-- `meta-llama/llama-3.2-3b-instruct:free` - Smaller but free
-- `qwen/qwen-2.5-7b-instruct:free` - Good for coding
+These models are completely free on OpenRouter and work well for coding tasks:
+
+1. **`meta-llama/llama-3.3-70b-instruct:free`** - Best overall choice (recommended)
+   - Large, capable model with strong reasoning
+   - Good rate limits for interactive use
+   
+2. **`nvidia/nemotron-3-super-120b-a12b:free`** - Excellent for coding
+   - Large model with excellent reasoning and code generation
+   - Reliable rate limits
+   
+3. **`nousresearch/hermes-3-llama-3.1-405b:free`** - Most capable
+   - Huge 405B model, excellent for complex tasks
+   - May be slower due to size
+
+**Recommendation:** Start with `meta-llama/llama-3.3-70b-instruct:free` or `nvidia/nemotron-3-super-120b-a12b:free` for the best balance of capability and usability.
 
 You can switch models anytime in the Cline settings.
 
 ---
 
 ## 6. Fork and Clone the Course Repository
+
+**From this point forward, use VSCode's integrated terminal** (View → Terminal or `` Cmd+` ``)
 
 ### Step 1: Fork the Repository
 
@@ -211,7 +224,7 @@ You can switch models anytime in the Cline settings.
 
 ### Step 2: Clone Your Fork
 
-Open Terminal and run:
+Open VSCode's integrated terminal (View → Terminal or `` Cmd+` ``) and run:
 
 ```bash
 # Navigate to where you want to store course materials
