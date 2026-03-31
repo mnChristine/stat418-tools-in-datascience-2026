@@ -102,11 +102,11 @@ The final application should be deployed as a service online so that I and anyon
 
 Here are a few nice examples of past GitHub repos from this course in past iterations.
 
-[International Airfare Price Predictions](https://github.com/chenjoyq/intl-airfare-pricing) - Joy Chen
+[UCLA Clubs App](https://github.com/DavidLiu0619/ucla-clubs-app) - David Liu - Interactive app for discovering UCLA student organizations
 
-[Daily Fantasy Optimizer](https://github.com/guydotan/nfl-dfs-optimizer) - Guy Dotan
+[Hike Finder App](https://github.com/yesitsmary/hike-finder-app) - Mary - Deployed Shiny app for finding hiking trails ([Live App](https://yesitsmary.shinyapps.io/hike-finder-app/))
 
-[Gaming the System](https://github.com/RIPsilon/418-Final-Project/tree/master) - Anna Huynh
+[Crows From Around the World](https://github.com/samanthawavell/Stats-418-Final-Project) - Samantha Wavell - Complete project with data collection, modeling, and deployment
 
 ## Submission Instructions
 
