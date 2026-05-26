@@ -14,11 +14,13 @@ fullstack-app/
 ├── backend/
 │   ├── main.py
 │   ├── test_main.py
-│   ├── requirements.txt
+│   ├── pyproject.toml
+│   ├── uv.lock
 │   └── Dockerfile
 ├── frontend/
 │   ├── app.py
-│   ├── requirements.txt
+│   ├── pyproject.toml
+│   ├── uv.lock
 │   └── Dockerfile
 ├── docker-compose.yml
 ├── ci.yml
@@ -130,16 +132,14 @@ The Streamlit app provides:
 
 The frontend calls the backend using the `BACKEND_URL` environment variable.
 
-## Local Python setup
+## Local Python setup with uv
 
 ### Backend
 
 ```bash
 cd week-9/examples/fullstack-app/backend
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-python main.py
+uv sync
+uv run python main.py
 ```
 
 ### Frontend
@@ -148,11 +148,8 @@ In a separate terminal:
 
 ```bash
 cd week-9/examples/fullstack-app/frontend
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-export BACKEND_URL=http://localhost:8000
-streamlit run app.py
+uv sync
+BACKEND_URL=http://localhost:8000 uv run streamlit run app.py
 ```
 
 Then open:
@@ -174,6 +171,8 @@ Or with Docker Compose:
 docker compose up --build
 ```
 
+The backend and frontend images install dependencies with `uv sync --no-dev` during build.
+
 Expected services:
 
 - frontend: `http://localhost:8501`
@@ -192,16 +191,16 @@ Run them with:
 
 ```bash
 cd week-9/examples/fullstack-app/backend
-pytest -q
+uv run pytest -q
 ```
 
 ## CI workflow
 
 The `ci.yml` file demonstrates a simple multi-service workflow:
 
-- install backend dependencies
+- sync backend dependencies with `uv`
 - run backend tests
-- install frontend dependencies
+- sync frontend dependencies with `uv`
 - perform a frontend smoke check with `py_compile`
 
 This is enough to teach the idea that different services in one repository may have different validation steps.
